@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jai Bhawani Hotel - Shuddh Vaishno Dhaba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #8B4513; --secondary-color: #D2691E; --accent-color: #FF8C00; --bg-light: #FFF8DC; --text-dark: #3E2723; --green-pure: #2E7D32; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
+        .hero { position: relative; min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 2rem; overflow: hidden; background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)); }
+        .hero-bg-animation { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: url('https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; animation: panBackground 25s ease-in-out infinite alternate; }
+        @keyframes panBackground { 0% { transform: scale(1) translate(0, 0); } 50% { transform: scale(1.08) translate(-1%, -1%); } 100% { transform: scale(1) translate(0, 0); } }
+        .smoke-effect { position: absolute; bottom: 10%; right: 20%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%); opacity: 0; animation: riseSmoke 8s infinite ease-in-out; pointer-events: none; }
+        @keyframes riseSmoke { 0% { transform: translateY(50px) scale(0.5); opacity: 0; } 50% { opacity: 0.4; } 100% { transform: translateY(-150px) scale(1.5); opacity: 0; } }
+        .hero h1 { font-family: 'Rozha One', serif; font-size: 4.5rem; color: #FFD700; text-shadow: 3px 3px 0px var(--primary-color), 5px 5px 15px rgba(0,0,0,0.8); margin-bottom: 0.5rem; letter-spacing: 1px; }
+        .hero .subtitle { font-family: 'Rozha One', serif; font-size: 2rem; color: #fff; background: var(--green-pure); padding: 0.2rem 1.5rem; border-radius: 50px; display: inline-block; margin-bottom: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 2px solid #fff; }
+        .hero .main-message { font-size: 2.2rem; font-weight: 700; color: #FFF8DC; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); max-width: 800px; border-top: 2px dashed var(--accent-color); border-bottom: 2px dashed var(--accent-color); padding: 1rem 0; }
+        .sweets-section { padding: 5rem 2rem; background: #fff; background-image: radial-gradient(var(--bg-light) 1px, transparent 0); background-size: 24px 24px; text-align: center; position: relative; }
+        .sweets-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 12px; background: linear-gradient(-45deg, var(--bg-light) 6px, transparent 0), linear-gradient(45deg, var(--bg-light) 6px, transparent 0); background-size: 12px 24px; }
+        .section-title { font-family: 'Rozha One', serif; font-size: 3rem; color: var(--primary-color); margin-bottom: 0.2rem; }
+        .section-tagline { font-size: 1.2rem; color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3rem; display: inline-block; border-bottom: 2px solid var(--accent-color); padding-bottom: 0.5rem; }
+        .sweets-grid { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+        .sweet-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(62,39,35,0.1); width: 320px; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid rgba(139,69,19,0.1); }
+        .sweet-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(62,39,35,0.2); }
+        .sweet-img-container { height: 240px; overflow: hidden; position: relative; }
+        .sweet-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .sweet-card:hover .sweet-img-container img { transform: scale(1.1); }
+        .sweet-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-color); color: white; padding: 0.2rem 0.8rem; font-size: 0.8rem; font-weight: bold; border-radius: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .sweet-info { padding: 1.5rem; }
+        .sweet-info h3 { font-size: 1.4rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+        .sweet-info p { font-size: 0.95rem; color: #6d4c41; line-height: 1.4; }
+        .features-section { background-color: var(--primary-color); color: #fff; padding: 4rem 2rem; }
+        .features-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        .feature-item { text-align: center; flex: 1; min-width: 250px; padding: 1.5rem; background: rgba(255, 255, 255, 0.05); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .feature-icon { font-size: 3.5rem; margin-bottom: 1.2rem; color: #FFD700; display: inline-block; transition: transform 0.3s ease; }
+        .feature-item:hover .feature-icon { transform: scale(1.15) rotate(5deg); }
+        .feature-icon.veg-icon { color: #4CAF50; }
+        .feature-item h4 { font-size: 1.4rem; margin-bottom: 0.8rem; font-weight: 600; letter-spacing: 1px; }
+        .payment-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 0.8rem; font-size: 1.8rem; }
+        .payment-icons i { background: rgba(255,255,255,0.9); padding: 0.4rem; border-radius: 8px; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; }
+        .payment-icons .fa-mobile-alt { color: #5f259f; }
+        .payment-icons .fa-google { color: #4285F4; }
+        .payment-icons .fa-qrcode { color: #000; }
+        footer { background-color: #21100b; color: #d7ccc8; padding: 4rem 2rem 2rem; border-top: 5px solid var(--accent-color); }
+        .footer-container { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 3rem; max-width: 1200px; margin: 0 auto; }
+        .footer-brand { flex: 1; min-width: 300px; }
+        .footer-brand h2 { font-family: 'Rozha One', serif; color: #FFD700; font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .footer-brand p { font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .footer-info { flex: 1; min-width: 300px; }
+        .footer-info h3 { font-size: 1.3rem; color: #fff; margin-bottom: 1.5rem; border-left: 4px solid var(--accent-color); padding-left: 0.7rem; }
+        .contact-item { display: flex; align-items: flex-start; margin-bottom: 1.2rem; font-size: 1rem; }
+        .contact-item i { font-size: 1.3rem; color: var(--accent-color); margin-right: 1rem; margin-top: 0.2rem; }
+        .contact-item a { color: #d7ccc8; text-decoration: none; transition: color 0.2s; }
+        .contact-item a:hover { color: #FFD700; }
+        .footer-bottom { text-align: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; color: #8d6e63; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .hero .subtitle { font-size: 1.4rem; } .hero .main-message { font-size: 1.5rem; } .section-title { font-size: 2.2rem; } .footer-container { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-bg-animation"></div>
+        <div class="smoke-effect"></div>
+        <h1>जय भवानी होटल</h1>
+        <div class="subtitle">(शुद्ध वैष्णो ढाबा)</div>
+        <div class="main-message">Pure Vegetarian Food and Rajasthani Flavors</div>
+    </section>
+    <section class="sweets-section">
+        <h2 class="section-title">Our Famous Sweets</h2>
+        <div class="section-tagline">Made with Pure Desi Ghee</div>
+        <div class="sweets-grid">
+            <div class="sweet-card">
+                <div class="sweet-img-container">
+                    <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=500&q=80" alt="Crispy Jalebi">
+                    <span class="sweet-badge">Bestseller</span>
+                </div>
+                <div class="sweet-info">
+                    <h3>Kesari Jalebi</h3>
+                    <p>Crispy, golden-hued swirls dripping with thick, aromatic saffron syrup. Fried to perfection in pure Desi Ghee.</p>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="sweet-img-container">
+                    <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=500&q=80" alt="Traditional Peda">
+                    <span class="sweet-badge">Traditional</span>
+                </div>
+                <div class="sweet-info">
+                    <h3>Mathura Peda</h3>
+                    <p>Rich, caramelized milk solids infused with freshly crushed cardamom, presenting an authentic, melt-in-your-mouth experience.</p>
+                </div>
+            </div>
+            <div class="sweet-card">
+                <div class="sweet-img-container">
+                    <img src="https://images.unsplash.com/photo-1605197585662-740d5dfcd799?auto=format&fit=crop&w=500&q=80" alt="Desi Ghee Laddoo">
+                    <span class="sweet-badge">Pure Ghee</span>
+                </div>
+                <div class="sweet-info">
+                    <h3>Moti Choor Laddoo</h3>
+                    <p>Delicate fine gram flour pearls, closely packed together with premium dry fruits and a lavish glaze of pure ghee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-regular fa-clock"></i></div>
+                <h4>Open 24/7</h4>
+                <p>Craving traditional flavors at midnight or early dawn? Our doors and kitchen are always open to serve you hot meals.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon veg-icon"><i class="fa-solid fa-leaf"></i></div>
+                <h4>Pure Veg Only</h4>
+                <p>A strictly 100% Shuddh Vaishno kitchen setup. We maintain the highest standards of purity, cleanliness, and tradition.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+                <h4>All Payment Options</h4>
+                <p>Smooth and hassle-free billing. We warmly accept all digital payment methods.</p>
+                <div class="payment-icons">
+                    <i class="fa-solid fa-mobile-alt" title="PhonePe / UPI"></i>
+                    <i class="fa-brands fa-google" title="Google Pay"></i>
+                    <i class="fa-solid fa-qrcode" title="Scan UPI QR"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Jai Bhawani Hotel</h2>
+                <p>Experience authentic Rajasthani flavors and pure vegetarian delights at Jai Bhawani Hotel. We focus on traditional tastes in a warm, inviting atmosphere.</p>
+            </div>
+            <div class="footer-info">
+                <h3>Contact & Location</h3>
+                <div class="contact-item">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <div><strong>Address:</strong><br>8W8H+FJX, Ishwarnagar,<br>Rajasthan 323602</div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div><strong>Phone Support:</strong><br><a href="tel:+919876543210">+91-9876543210</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">&copy; 2026 Jai Bhawani Hotel (Shuddh Vaishno Dhaba). All Rights Reserved.</div>
+    </footer>
+</body>
+</html>
+
